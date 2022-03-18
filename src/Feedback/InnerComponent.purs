@@ -87,13 +87,13 @@ handleAction  = case _ of
       H.liftEffect
         $ subscribe
             ( runNoLoop
-                animationFrameEvent
+                (animationFrameEvent)
                 (pure {}                )
                 {}
                 ffiAudio
                 (piece wavs setup oracle)
             )
-            ( \(o :: TriggeredRun Res ()) -> pure unit)
+            ( \(_ :: TriggeredRun Res ()) -> pure unit)
     H.modify_ _
       { unsubscribe = unsubscribe
       , audioCtx = Just audioCtx

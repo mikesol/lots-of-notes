@@ -46,8 +46,8 @@ initialAcc :: Acc
 initialAcc =
   { triggers
   , stagedAudio: empty
-  , notes0: l2cf 1.65 (mfy seq0)
-  , notes1: l2cf 1.75 (mfy seq1)
+  , notes0: map (over _1 (add 1.13)) $ l2cf 1.65 (mfy seq0)
+  , notes1: map (over _1 (add 1.98)) $ l2cf 1.75 (mfy seq1)
   , notes2: l2cf 3.3 (mfy seq2)
   }
 
